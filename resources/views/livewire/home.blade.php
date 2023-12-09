@@ -43,22 +43,27 @@
             </div>
 
             <section class="mt-4">
-                <h4 class="font-bold text-gray-700/95">Suggestions for you</h4>
+                <div class="flex justify-between items-center">
+                    <h4 class="font-bold text-gray-700/95 text-sm">Suggested for you</h4>
+                    <a href="#" class="font-bold text-xs hover:opacity-50">See All</a>
+                </div>
 
-                <ul class="my-2 space-y-3">
-                    <li class="flex items-center gap-3">
-                        <x-avatar src="https://source.unsplash.com/500x500?face" class="w-12 h-12" />
+                <ul class="mt-3 mb-10 space-y-3">
+                    @for ($i = 0; $i < 5; $i++)
+                        <li class="flex items-center gap-3">
+                            <x-avatar src="https://source.unsplash.com/500x500?face-{{ $i }}" class="w-12 h-12" />
 
-                        <div class="grid grid-cols-7 w-full gap-2">
-                            <div class="col-span-5">
-                                <h5 class="font-semibold truncate text-sm">{{ fake()->name }}</h5>
-                                <p class="text-xs truncate">Followed by {{ fake()->name }}</p>
+                            <div class="grid grid-cols-7 w-full gap-2">
+                                <div class="col-span-5">
+                                    <h5 class="font-semibold truncate text-sm">{{ fake()->name }}</h5>
+                                    <p class="text-xs truncate">Followed by {{ fake()->name }}</p>
+                                </div>
+                                <div class="col-span-2 flex text-right justify-end">
+                                    <button class="font-bold text-blue-500 ml-auto text-xs">Follow</button>
+                                </div>
                             </div>
-                            <div class="col-span-2 flex text-right justify-end">
-                                <button class="font-bold text-blue-500 ml-auto text-sm">Follow</button>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    @endfor
                 </ul>
             </section>
 
