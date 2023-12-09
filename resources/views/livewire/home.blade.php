@@ -21,7 +21,7 @@
     </header>
 
     <main class="grid lg:grid-cols-12 gap-8 md:mt-10">
-        <aside class="lg:col-span-8 border overflow-hidden h-[1000px]">
+        <aside class="lg:col-span-8 overflow-hidden h-[1000px]">
             {{-- stories --}}
             <section>
                 <ul class="flex overflow-x-auto items-center gap-2 scrollbar-hide">
@@ -33,10 +33,15 @@
                     @endfor
                 </ul>
             </section>
+
+            {{-- posts --}}
+            <section class="mt-5 space-y-4 p-2">
+                <livewire:post.item>
+            </section>
         </aside>
 
         {{-- suggestions --}}
-        <aside class="lg:col-span-4 border hidden lg:block p-4">
+        <aside class="lg:col-span-4 hidden lg:block p-4">
             <div class="flex items-center gap-2">
                 <x-avatar src="https://source.unsplash.com/500x500?face" class="w-12 h-12" />
                 <h4 class="font-medium">{{ fake()->name }}</h4>
